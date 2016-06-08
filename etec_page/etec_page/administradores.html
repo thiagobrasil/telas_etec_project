@@ -13,7 +13,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link href="static/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="static/font-awesome-4.6.3/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -89,7 +89,7 @@
         <a class="nav-link" data-toggle="tab" href="#messages" role="tab">Avaliadores</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Settings</a>
+        <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Resultados</a>
       </li>
     </ul>
 
@@ -112,12 +112,25 @@
             </div>
           </div>
         </div>
-
         <br>
         <div class="row row-centered">
-          <label for="nomeCandidato" class="col-sm-2 col-centered">Pesquisa por edital</label>
+          <label for="nomeCandidato" class="col-sm-2 col-centered">Forma de Pesquisa</label>
           <div class="col-sm-6 col-centered">
-            <input type="name" class="form-control" id="inputName" placeholder="Informe a referência do Edital">
+            <div class="radio">
+              <label><input type="radio" name="optradio">Por Polo</label>
+              &nbsp
+              <label><input type="radio" name="optradio">Por Curso</label>
+              &nbsp
+              <label><input type="radio" name="optradio">Por Data</label>
+            </div>
+            <!--  Radio buttons tipo de pesquisa para editais -->
+          </div>
+        </div>
+        <br>
+        <div class="row row-centered">
+          <label for="nomeCandidato" class="col-sm-2 col-centered">Pesquisar por edital</label>
+          <div class="col-sm-6 col-centered">
+            <input type="name" class="form-control" id="inputName" placeholder="Informe sua pesquisa">
           </div>
         </div>
         <br>
@@ -169,6 +182,30 @@
           </div>
         </div>
       </div>
+
+      <!-- Lista de polos para se cadastrar o edital -->
+      <div class="row">
+        <label for="processoSeletivo" class="col-sm-3 col-centered">Polo</label>
+        <div class="col-sm-9 col-centered">
+          <!-- <input type="name" class="form-control" id="processoSeletivo" placeholder="Processo Seletivo"> -->
+          <select class="form-control" id="inputPolo">
+            <option>-</option>
+          </select>
+        </div>
+      </div>
+      <br>
+
+      <!-- Lista de avaliadores disponíveis para tal polo -->
+      <div class="row">
+        <label for="processoSeletivo" class="col-sm-3 col-centered">Avaliador</label>
+        <div class="col-sm-9 col-centered">
+          <!-- <input type="name" class="form-control" id="processoSeletivo" placeholder="Processo Seletivo"> -->
+          <select class="form-control" id="inputEdital">
+            <option>-</option>
+          </select>
+        </div>
+      </div>
+      <br>
 
           <div class="row row-centered">
             <div class="col-sm-6 col-centered">
@@ -325,6 +362,13 @@
                   </div>
                   <br>
                   <div class="row">
+                    <label for="nomeCandidato" class="col-sm-3 col-centered">Polo</label>
+                    <div class="col-sm-9 col-centered">
+                      <input type="name" class="form-control" id="inputPoloAvaliador" placeholder="Polo do Avaliador">
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
                     <label for="nomeCandidato" class="col-sm-3 col-centered">E-mail</label>
                     <div class="col-sm-9 col-centered">
                       <input type="email" class="form-control" id="inputEmailAvaliador" placeholder="E-mail do Avaliador">
@@ -372,7 +416,60 @@
 
       </div> <!-- aba 3 -->
 
-      <div class="tab-pane fade" id="settings" role="tabpanel">teste4</div>
+      <div class="tab-pane fade" id="settings" role="tabpanel">
+        <br><br>
+        <div class="row row-centered">
+          <label for="processoSeletivo" class="col-sm-2 col-centered">Fase do Concurso</label>
+          <div class="col-sm-6 col-centered">
+            <!-- <input type="name" class="form-control" id="processoSeletivo" placeholder="Processo Seletivo"> -->
+            <select class="form-control" id="inputFaseEdital">
+              <option>-</option>
+              <option>Primeira Fase</option>
+              <option>Primeira Fase (Retificado)</option>
+              <option>Segunda Fase</option>
+              <option>Segunda Fase (Retificado)</option>
+              <option>Resultado Final </option>
+            </select>
+          </div>
+        </div>
+
+        <br>
+          <div class="row row-centered">
+            <label for="processoSeletivo" class="col-sm-2 col-centered">Selecionar Edital</label>
+            <div class="col-sm-6 col-centered">
+              <!-- <input type="name" class="form-control" id="processoSeletivo" placeholder="Processo Seletivo"> -->
+              <select class="form-control" id="inputBuscarResultEdital">
+                <option>-</option>
+              </select>
+            </div>
+          </div>
+
+          <br>
+            <div class="row row-centered">
+              <label for="processoSeletivo" class="col-sm-2 col-centered">Selecionar Polo</label>
+              <div class="col-sm-6 col-centered">
+                <!-- <input type="name" class="form-control" id="processoSeletivo" placeholder="Processo Seletivo"> -->
+                <select class="form-control" id="inputBuscarResultPolo">
+                  <option>-</option>
+                </select>
+              </div>
+            </div>
+            <br>
+
+            <div class="row row-centered">
+              <div class="col-sm-4 col-centered">
+                <button type="button" class="btn btn-info">Pesquisar Resultados</button
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+      </div>
     </div>
 
 
