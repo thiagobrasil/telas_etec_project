@@ -159,7 +159,7 @@
           <p>Cadastrar Edital</p>
           <div class="row">
             <label for="nomeCandidato" class="col-sm-3 col-centered">Título do Edital</label>
-            <div class="col-sm-9 col-centered">
+            <div class="col-md-9 col-centered">
               <input type="name" class="form-control" id="inputName" placeholder="Título">
             </div>
           </div>
@@ -168,16 +168,27 @@
               <div class="form-group">
                 <br>
                   <label for="comment" class="col-sm-3">Descrição</label>
-                  <div class="col-sm-9 col-centered">
+                  <div class="col-md-9 col-centered">
                   <textarea class="form-control" rows="5" id="comment"></textarea>
               </div>
             </div>
           </div>
 
+          <div class="row">
+            <label for="periodoEdital" class="col-sm-3 col-centered">Período do Edital</label>
+            <div class="col-md-9 col-centered">
+            de <input type="date"> à <input type="date">
+              <!-- <input type="name" class="form-control" id="inputName" placeholder="Título"> -->
+            </div>
+          </div>
+          <br>
+
+
+
           <div class="row row">
             <div class="form-group">
             <label for="inputFile" class="col-sm-3">Anexar Edital</label>
-            <div class="col-sm-9 col-centered">
+            <div class="col-md-9 col-centered">
             <input type="file" id="inputFile">
           </div>
         </div>
@@ -186,7 +197,7 @@
       <!-- Lista de polos para se cadastrar o edital -->
       <div class="row">
         <label for="processoSeletivo" class="col-sm-3 col-centered">Polo</label>
-        <div class="col-sm-9 col-centered">
+        <div class="col-md-9 col-centered">
           <!-- <input type="name" class="form-control" id="processoSeletivo" placeholder="Processo Seletivo"> -->
           <select class="form-control" id="inputPolo">
             <option>-</option>
@@ -418,20 +429,17 @@
 
       <div class="tab-pane fade" id="settings" role="tabpanel">
         <br><br>
+        
         <div class="row row-centered">
-          <label for="processoSeletivo" class="col-sm-2 col-centered">Fase do Concurso</label>
+          <label for="processoSeletivo" class="col-sm-2 col-centered">Selecionar Polo</label>
           <div class="col-sm-6 col-centered">
             <!-- <input type="name" class="form-control" id="processoSeletivo" placeholder="Processo Seletivo"> -->
-            <select class="form-control" id="inputFaseEdital">
+            <select class="form-control" id="inputBuscarResultPolo">
               <option>-</option>
-              <option>Primeira Fase</option>
-              <option>Primeira Fase (Retificado)</option>
-              <option>Segunda Fase</option>
-              <option>Segunda Fase (Retificado)</option>
-              <option>Resultado Final </option>
             </select>
           </div>
         </div>
+
 
         <br>
           <div class="row row-centered">
@@ -445,16 +453,21 @@
           </div>
 
           <br>
-            <div class="row row-centered">
-              <label for="processoSeletivo" class="col-sm-2 col-centered">Selecionar Polo</label>
-              <div class="col-sm-6 col-centered">
-                <!-- <input type="name" class="form-control" id="processoSeletivo" placeholder="Processo Seletivo"> -->
-                <select class="form-control" id="inputBuscarResultPolo">
-                  <option>-</option>
-                </select>
-              </div>
+          <div class="row row-centered">
+            <label for="processoSeletivo" class="col-sm-2 col-centered">Fase do Concurso</label>
+            <div class="col-sm-6 col-centered">
+              <!-- <input type="name" class="form-control" id="processoSeletivo" placeholder="Processo Seletivo"> -->
+              <select class="form-control" id="inputFaseEdital">
+                <option>-</option>
+                <option>Primeira Fase</option>
+                <option>Primeira Fase (Retificado)</option>
+                <option>Segunda Fase</option>
+                <option>Segunda Fase (Retificado)</option>
+                <option>Resultado Final </option>
+              </select>
             </div>
-            <br>
+          </div>
+          <br>
 
             <div class="row row-centered">
               <div class="col-sm-4 col-centered">
