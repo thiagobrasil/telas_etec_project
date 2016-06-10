@@ -14,6 +14,31 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link href="static/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="static/font-awesome-4.6.3/css/font-awesome.min.css">
+
+
+
+  <!-- Gambiarra  arrumar isso urgente -->
+
+  <script type="text/javascript">
+  function resetActive(event, percent) {
+    $(".progress-bar").css("width", percent + "%").attr("aria-valuenow", percent);
+    $(".progress-completed").text(percent + "%");
+
+    $("div").each(function () {
+      if ($(this).hasClass("activestep")) {
+        $(this).removeClass("activestep");
+      }
+    });
+
+    if (event.target.className == "col-md-2") {
+      $(event.target).addClass("activestep");
+    }
+    else {
+      $(event.target.parentNode).addClass("activestep");
+    }
+  }
+  </script>
+
 </head>
 
 <body>
@@ -144,117 +169,176 @@
         </div>
 
 
-<div class="container">
-  <!-- Conteúdo dentro do Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
+        <div class="container">
+          <!-- Conteúdo dentro do Modal -->
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
 
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Gerenciamento de Editais</h4>
-        </div>
-        <div class="modal-body">
-          <p>Cadastrar Edital</p>
-          <div class="row">
-            <label for="nomeCandidato" class="col-sm-3 col-centered">Título do Edital</label>
-            <div class="col-md-9 col-centered">
-              <input type="name" class="form-control" id="inputName" placeholder="Título">
-            </div>
-          </div>
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Gerenciamento de Editais</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Cadastrar Edital</p>
 
-          <div class="row">
-              <div class="form-group">
-                <br>
-                  <label for="comment" class="col-sm-3">Descrição</label>
-                  <div class="col-md-9 col-centered">
-                  <textarea class="form-control" rows="5" id="comment"></textarea>
+                  <!--  Teste progress-->
+
+
+                  <div class="container" >
+                    <div class="row">
+                      <div class="progress" id="progress1">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                        </div>
+                        <span class="progress-type">Taxa de Proresso</span>
+                        <span class="progress-completed">0%</span>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <br>
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#home3" id="div1" onclick="javascript: resetActive(event, 0)">Edital</a></li>
+                    <!-- <div id="div1" class="col-md-3 activestep" onclick="javascript: resetActive(event, 0); -->
+                    <li><a data-toggle="tab" href="#menu1" onclick="javascript: resetActive(event, 33);">Cursos</a></li>
+                    <li><a data-toggle="tab" href="#menu2" onclick="javascript: resetActive(event, 66);">Avaliadores</a></li>
+                    <li><a data-toggle="tab" href="#menu3" onclick="javascript: resetActive(event, 100);">Resumo</a></li>
+                  </ul>
+                  <br>
+                  <div class="tab-content">
+                    <div id="home3" class="tab-pane fade in active">
+                      <div class="row">
+                        <label for="nomeCandidato" class="col-sm-3 col-centered">Título do Edital</label>
+                        <div class="col-md-9 col-centered">
+                          <input type="name" class="form-control" id="inputName" placeholder="Título">
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group">
+                          <br>
+                          <label for="comment" class="col-sm-3">Descrição</label>
+                          <div class="col-md-9 col-centered">
+                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <label for="periodoEdital" class="col-sm-3 col-centered">Período do Edital</label>
+                        <div class="col-md-9 col-centered">
+                          de <input type="date"> à <input type="date">
+                          <!-- <input type="name" class="form-control" id="inputName" placeholder="Título"> -->
+                        </div>
+                      </div>
+                      <br>
+
+                      <div class="row row">
+                        <div class="form-group">
+                          <label for="inputFile" class="col-sm-3">Anexar Edital</label>
+                          <div class="col-md-9 col-centered">
+                            <input type="file" id="inputFile">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
+                      <div id="menu1" class="tab-pane fade">
+
+                        <div class="row">
+                          <div class="col-md-4">
+                            Cursos
+                        <br><br>
+                        <div class="radio">
+                          <label><input type="radio" name="optradio" value="">Agroindústria</label>
+                        </div>
+                        <br>
+                        <div class="radio">
+                          <label><input type="radio" name="optradio" value="">Apicultura</label>
+                        </div>
+                        <br>
+                        <div class="radio">
+                          <label><input type="radio" name="optradio" value="">Comércio Exterior</label>
+                        </div>
+                        <br>
+                        <div class="radio">
+                          <label><input type="radio" name="optradio" value="">Manutenção e Suporte em Informática</label>
+                        </div>
+                        <br>
+                        <div class="radio">
+                          <label><input type="radio" name="optradio" value="">Multimeios Didáticos</label>
+                        </div>
+                        <br>
+                        <div class="radio">
+                          <label><input type="radio" name="optradio" value="">Secretaria Escolar</label>
+                        </div>
+                        <br>
+                      </div>
+
+                      <div class="col-md-4">
+                        Polo
+                        <br><br>
+                        <div class="row row-centered">
+                          <div class="col-md-10">
+                            <!-- <input type="name" class="form-control" id="processoSeletivo" placeholder="Processo Seletivo"> -->
+                            <select class="form-control" id="listaEditais">
+                              <option>-</option>
+                              <option>Edital 1</option>
+                              <option>Edital 2</option>
+                              <option>Edital 3</option>
+                              <option>Edital 4</option>
+                            </select>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="col-md-4">
+                        Tutoria
+                      <br><br>
+                      <div class="radio">
+                        <label><input type="radio" name="optradio" value="">Presencial</label>
+                      </div>
+                      <div class="radio">
+                        <label><input type="radio" name="optradio" value="">EAD</label>
+                      </div>
+                    </div>
+
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+                    <div id="menu2" class="tab-pane fade">
+                      <h3>Menu 2</h3>
+                      <p>Some content in menu 2.</p>
+                    </div>
+                  </div>
+
+                  <!--  Fim teste -->
+
+
+
+
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="row">
-            <label for="periodoEdital" class="col-sm-3 col-centered">Período do Edital</label>
-            <div class="col-md-9 col-centered">
-            de <input type="date"> à <input type="date">
-              <!-- <input type="name" class="form-control" id="inputName" placeholder="Título"> -->
-            </div>
-          </div>
-          <br>
-
-
-
-          <div class="row row">
-            <div class="form-group">
-            <label for="inputFile" class="col-sm-3">Anexar Edital</label>
-            <div class="col-md-9 col-centered">
-            <input type="file" id="inputFile">
-          </div>
         </div>
-      </div>
-
-      <!-- Lista de polos para se cadastrar o edital -->
-      <div class="row">
-        <label for="processoSeletivo" class="col-sm-3 col-centered">Polo</label>
-        <div class="col-md-9 col-centered">
-          <!-- <input type="name" class="form-control" id="processoSeletivo" placeholder="Processo Seletivo"> -->
-          <select class="form-control" id="inputPolo">
-            <option>-</option>
-          </select>
-        </div>
-      </div>
-      <br>
-
-      <!-- Lista de avaliadores disponíveis para tal polo -->
-      <div class="row">
-        <label for="processoSeletivo" class="col-sm-3 col-centered">Avaliador</label>
-        <div class="col-sm-9 col-centered">
-          <!-- <input type="name" class="form-control" id="processoSeletivo" placeholder="Processo Seletivo"> -->
-          <select class="form-control" id="inputEdital">
-            <option>-</option>
-          </select>
-        </div>
-      </div>
-      <br>
-
-          <div class="row row-centered">
-            <div class="col-sm-6 col-centered">
-            <button type="button" class="btn btn-info"><!--<i class="fa fa-plus" aria-hidden="true"></i>-->Cadastrar Edital</button>
-          </div>
-          </div>
-          <hr>
-          <p>Remover Edital</p>
-
-          <div class="row">
-            <label for="nomeCandidato" class="col-sm-3 col-centered">Referência</label>
-            <div class="col-sm-9 col-centered">
-              <input type="name" class="form-control" id="inputName" placeholder="Informe a referência do Edital">
-            </div>
-          </div>
-          <br>
-          <div class="row">
-            <label for="nomeCandidato" class="col-sm-3 col-centered">Edital</label>
-            <div class="col-sm-9 col-centered">
-              <input type="name" class="form-control" id="inputName" placeholder="Edital Encontrado">
-            </div>
-          </div>
-          <br>
-          <div class="row row-centered">
-            <div class="col-sm-6 col-centered">
-            <button type="button" class="btn btn-danger"><!--<i class="fa fa-plus" aria-hidden="true"></i>-->Remover Edital</button>
-          </div>
-          </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div> <!-- aba 1 -->
+      </div> <!-- aba 1 -->
 
       <div class="tab-pane fade" id="profile" role="tabpanel"> <!-- Aba Candidato -->
         <br><br>
@@ -305,9 +389,9 @@
           <label for="nomeCandidato" class="col-sm-2 col-centered">Forma de Pesquisa</label>
           <div class="col-sm-6 col-centered">
             <div class="radio">
-              <label><input type="radio" name="optradio">Por Polo</label>
+              <label><input type="radio" name="optradio">Por Nome</label>
               &nbsp
-              <label><input type="radio" name="optradio">Por Edital</label>
+              <label><input type="radio" name="optradio">Por CPF</label>
             </div>
             <!--  Check boxes candidato -->
           </div>
@@ -316,32 +400,18 @@
         <div class="row row-centered">
           <label for="nomeCandidato" class="col-sm-2 col-centered">Indentificação</label>
           <div class="col-sm-6 col-centered">
-            <input type="name" class="form-control" id="inputName" placeholder="Nome ou número de indentificação">
+            <input type="name" class="form-control" id="inputName" placeholder="Digite Nome ou CPF do avaliador">
           </div>
         </div>
+
 
         <br>
         <div class="row row-centered">
           <div class="col-sm-4 col-centered">
             <button type="button" class="btn btn-info">Pesquisar Avaliador</button>
-          </div>
-        </div>
-
-        <br>
-        <div class="row row-centered">
-          <label for="nomeCandidato" class="col-sm-2 col-centered">Avaliadores</label>
-          <div class="col-sm-6 col-centered">
-            <select class="form-control" id="inputEdital">
-              <option>-</option>
-              <option>Avaliadores encontrados</option>
-            </select>
-          </div>
-        </div>
-        <br>
-
-        <div class="row row-centered">
-          <div class="col-sm-4 col-centered">
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal2">Gerenciar Avaliadores</button>
+            <!-- <button type="button" class="btn btn-success">Gerenciar Editais</button> -->
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal2">Gerenciar Avaliador</button>
           </div>
         </div>
 
@@ -396,8 +466,8 @@
 
                   <div class="row row-centered">
                     <div class="col-sm-6 col-centered">
-                    <button type="button" class="btn btn-info"><!--<i class="fa fa-plus" aria-hidden="true"></i>-->Cadastrar Avaliador</button>
-                  </div>
+                      <button type="button" class="btn btn-info"><!--<i class="fa fa-plus" aria-hidden="true"></i>-->Cadastrar Avaliador</button>
+                    </div>
                   </div>
                   <hr>
                   <p>Remover Avaliador</p>
@@ -411,8 +481,8 @@
                   <br>
                   <div class="row row-centered">
                     <div class="col-sm-6 col-centered">
-                    <button type="button" class="btn btn-danger"><!--<i class="fa fa-plus" aria-hidden="true"></i>-->Remover Avaliador</button>
-                  </div>
+                      <button type="button" class="btn btn-danger"><!--<i class="fa fa-plus" aria-hidden="true"></i>-->Remover Avaliador</button>
+                    </div>
                   </div>
 
                 </div>
@@ -429,7 +499,7 @@
 
       <div class="tab-pane fade" id="settings" role="tabpanel">
         <br><br>
-        
+
         <div class="row row-centered">
           <label for="processoSeletivo" class="col-sm-2 col-centered">Selecionar Polo</label>
           <div class="col-sm-6 col-centered">
@@ -442,38 +512,39 @@
 
 
         <br>
-          <div class="row row-centered">
-            <label for="processoSeletivo" class="col-sm-2 col-centered">Selecionar Edital</label>
-            <div class="col-sm-6 col-centered">
-              <!-- <input type="name" class="form-control" id="processoSeletivo" placeholder="Processo Seletivo"> -->
-              <select class="form-control" id="inputBuscarResultEdital">
-                <option>-</option>
-              </select>
+        <div class="row row-centered">
+          <label for="processoSeletivo" class="col-sm-2 col-centered">Selecionar Edital</label>
+          <div class="col-sm-6 col-centered">
+            <!-- <input type="name" class="form-control" id="processoSeletivo" placeholder="Processo Seletivo"> -->
+            <select class="form-control" id="inputBuscarResultEdital">
+              <option>-</option>
+            </select>
+          </div>
+        </div>
+
+        <br>
+        <div class="row row-centered">
+          <label for="processoSeletivo" class="col-sm-2 col-centered">Fase do Concurso</label>
+          <div class="col-sm-6 col-centered">
+            <!-- <input type="name" class="form-control" id="processoSeletivo" placeholder="Processo Seletivo"> -->
+            <select class="form-control" id="inputFaseEdital">
+              <option>-</option>
+              <option>Primeira Fase</option>
+              <option>Primeira Fase (Retificado)</option>
+              <option>Segunda Fase</option>
+              <option>Segunda Fase (Retificado)</option>
+              <option>Resultado Final </option>
+            </select>
+          </div>
+        </div>
+        <br>
+
+        <div class="row row-centered">
+          <div class="col-sm-4 col-centered">
+            <button type="button" class="btn btn-info">Pesquisar Resultados</button
             </div>
           </div>
 
-          <br>
-          <div class="row row-centered">
-            <label for="processoSeletivo" class="col-sm-2 col-centered">Fase do Concurso</label>
-            <div class="col-sm-6 col-centered">
-              <!-- <input type="name" class="form-control" id="processoSeletivo" placeholder="Processo Seletivo"> -->
-              <select class="form-control" id="inputFaseEdital">
-                <option>-</option>
-                <option>Primeira Fase</option>
-                <option>Primeira Fase (Retificado)</option>
-                <option>Segunda Fase</option>
-                <option>Segunda Fase (Retificado)</option>
-                <option>Resultado Final </option>
-              </select>
-            </div>
-          </div>
-          <br>
-
-            <div class="row row-centered">
-              <div class="col-sm-4 col-centered">
-                <button type="button" class="btn btn-info">Pesquisar Resultados</button
-              </div>
-            </div>
 
 
 
@@ -481,53 +552,53 @@
 
 
 
-
+        </div>
       </div>
+
+
+
+      <!-- <div class="confirmacaoEmail"><h3>Você receberá um e-mail de confirmação de sua inscrição</h3></div> -->
+      <br><br>
+
+      <!--  logo como marca d'água-->
+      <div class="logo_watermark"><img src="static/etec_logo.png"></div>
     </div>
-
-
-
-    <!-- <div class="confirmacaoEmail"><h3>Você receberá um e-mail de confirmação de sua inscrição</h3></div> -->
-    <br><br>
-
-    <!--  logo como marca d'água-->
-    <div class="logo_watermark"><img src="static/etec_logo.png"></div>
   </div>
-</div>
 
-<div class="container-100%">
-  <div class="rodape">
-    <div class="row">
-      <div class="textoRodape">
-        <p><div class="col-md-6">Página em desenvolvimento<br>TADS Turma 2014.2 - EAJ - UFRN<br></div></p>
-      </div>
+  <div class="container-100%">
+    <div class="rodape">
+      <div class="row">
+        <div class="textoRodape">
+          <p><div class="col-md-6">Página em desenvolvimento<br>TADS Turma 2014.2 - EAJ - UFRN<br></div></p>
+        </div>
 
-      <!-- {% static 'banner_logobrasil.png' %}
-      {% static 'banner_fnde.png' %}
-      {% static 'banner_etec.png' %}
-      {% static 'banner_ufrn.png' %}
-      {% static 'banner_eaj.png' %} -->
-      <div class="col-md-6">
-        <div class="parceiros">
-          <a href="http://www.brasil.gov.br/"><img src="static/banner_logobrasil.png" width="75"></a>
-          <a href="http://www.fnde.gov.br/"><img src="static/banner_fnde.png" width="75"></a>
-          <a href="http://redeetec.mec.gov.br/"><img src="static/banner_etec.png" width="75"></a>
-          <a href="http://www.sistemas.ufrn.br/portal/PT/"><img src="static/banner_ufrn.png" width="75"></a>
-          <a href="http://www.eaj.ufrn.br/site/"><img src="static/banner_eaj.png" width="75"></a>
+        <!-- {% static 'banner_logobrasil.png' %}
+        {% static 'banner_fnde.png' %}
+        {% static 'banner_etec.png' %}
+        {% static 'banner_ufrn.png' %}
+        {% static 'banner_eaj.png' %} -->
+        <div class="col-md-6">
+          <div class="parceiros">
+            <a href="http://www.brasil.gov.br/"><img src="static/banner_logobrasil.png" width="75"></a>
+            <a href="http://www.fnde.gov.br/"><img src="static/banner_fnde.png" width="75"></a>
+            <a href="http://redeetec.mec.gov.br/"><img src="static/banner_etec.png" width="75"></a>
+            <a href="http://www.sistemas.ufrn.br/portal/PT/"><img src="static/banner_ufrn.png" width="75"></a>
+            <a href="http://www.eaj.ufrn.br/site/"><img src="static/banner_eaj.png" width="75"></a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 
 
 
 
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <!-- <script src="static/js/style.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="static/js/bootstrap.min.js"></script>
 </body>
 </html>
