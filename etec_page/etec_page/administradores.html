@@ -206,6 +206,7 @@
                     <li><a data-toggle="tab" href="#menu2" onclick="javascript: resetActive(event, 66);">Avaliadores</a></li>
                     <li><a data-toggle="tab" href="#menu3" onclick="javascript: resetActive(event, 100);">Resumo</a></li>
                   </ul>
+
                   <br>
                   <div class="tab-content">
                     <div id="home3" class="tab-pane fade in active">
@@ -230,7 +231,6 @@
                         <label for="periodoEdital" class="col-sm-3 col-centered">Período do Edital</label>
                         <div class="col-md-9 col-centered">
                           de <input type="date"> à <input type="date">
-                          <!-- <input type="name" class="form-control" id="inputName" placeholder="Título"> -->
                         </div>
                       </div>
                       <br>
@@ -249,83 +249,161 @@
 
 
 
-                      <div id="menu1" class="tab-pane fade">
+                    <div id="menu1" class="tab-pane fade">
 
-                        <div class="row">
-                          <div class="col-md-4">
-                            Cursos
-                        <br><br>
-                        <div class="radio">
-                          <label><input type="radio" name="optradio" value="">Agroindústria</label>
+                      <div class="row">
+                        <div class="col-md-6">
+                          Cursos
+                          <br><br>
+                          <!--  Informar os cursos aqui como uma lista -->
+                          <select class="form-control" id="listaEditais">
+                            <option>-</option>
+                            <option>Curso 1</option>
+                            <option>Curso 2</option>
+                            <option>Curso 3</option>
+                            <option>Curso 4</option>
+                          </select>
+
                         </div>
-                        <br>
-                        <div class="radio">
-                          <label><input type="radio" name="optradio" value="">Apicultura</label>
+
+                        <div class="col-md-6">
+                          Polo
+                          <br><br>
+                              <!-- <input type="name" class="form-control" id="processoSeletivo" placeholder="Processo Seletivo"> -->
+                              <select class="form-control" id="listaEditais">
+                                <option>-</option>
+                                <option>Edital 1</option>
+                                <option>Edital 2</option>
+                                <option>Edital 3</option>
+                                <option>Edital 4</option>
+                              </select>
                         </div>
-                        <br>
-                        <div class="radio">
-                          <label><input type="radio" name="optradio" value="">Comércio Exterior</label>
-                        </div>
-                        <br>
-                        <div class="radio">
-                          <label><input type="radio" name="optradio" value="">Manutenção e Suporte em Informática</label>
-                        </div>
-                        <br>
-                        <div class="radio">
-                          <label><input type="radio" name="optradio" value="">Multimeios Didáticos</label>
-                        </div>
-                        <br>
-                        <div class="radio">
-                          <label><input type="radio" name="optradio" value="">Secretaria Escolar</label>
-                        </div>
-                        <br>
                       </div>
 
-                      <div class="col-md-4">
-                        Polo
-                        <br><br>
-                        <div class="row row-centered">
-                          <div class="col-md-10">
-                            <!-- <input type="name" class="form-control" id="processoSeletivo" placeholder="Processo Seletivo"> -->
-                            <select class="form-control" id="listaEditais">
-                              <option>-</option>
-                              <option>Edital 1</option>
-                              <option>Edital 2</option>
-                              <option>Edital 3</option>
-                              <option>Edital 4</option>
-                            </select>
+                      <br>
+                      <div class="row">
+                        <div class="col-md-4">
+
+                          <div class="checkbox">
+                            <label><input type="checkbox" value="">Módulo EAD</label>
                           </div>
                         </div>
+                        <div class="col-md-2">
+                          <input type="name" class="form-control" id="vagasEAD" placeholder="Vagas" disabled="">
+                        </div>
 
+                        <div class="col-md-4">
+                          <div class="checkbox">
+                            <label><input type="checkbox" value="">Módulo Presencial</label>
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <input type="name" class="form-control" id="vagasEAD" placeholder="Vagas" disabled="">
+                        </div>
                       </div>
-                      <div class="col-md-4">
-                        Tutoria
-                      <br><br>
-                      <div class="radio">
-                        <label><input type="radio" name="optradio" value="">Presencial</label>
-                      </div>
-                      <div class="radio">
-                        <label><input type="radio" name="optradio" value="">EAD</label>
-                      </div>
-                    </div>
 
-                      </div>
-                    </div>
+                      <br>
+                      <button type="button" class="btn btn-warning">Adicionar</button>
+                      <hr>
+                      <!--  Espaço para receber a planilha que se formará ao adicionar cursos-->
 
-
-
-
-
+                    </div><!--  Fim da aba Cursos Aba 2 -->
 
 
                     <div id="menu2" class="tab-pane fade">
-                      <h3>Menu 2</h3>
-                      <p>Some content in menu 2.</p>
+
+                      <div class="row">
+                        <label for="nomeCandidato" class="col-sm-3 col-centered">Avaliador</label>
+                        <div class="col-md-9 col-centered">
+                          <select class="form-control" id="listaAvaliadores">
+                            <option>-</option>
+                            <option>Edital 1</option>
+                            <option>Edital 2</option>
+                            <option>Edital 3</option>
+                            <option>Edital 4</option>
+                          </select>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="row">
+                        <label for="nomeCandidato" class="col-sm-3 col-centered">Polo</label>
+                        <div class="col-md-9 col-centered">
+                          <select class="form-control" id="listaPolos">
+                            <option>-</option>
+                            <option>Edital 1</option>
+                            <option>Edital 2</option>
+                            <option>Edital 3</option>
+                            <option>Edital 4</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <br>
+                      <button type="button" class="btn btn-warning">Adicionar</button>
+                      <hr>
                     </div>
+                  <!--  Fim da aba Avaliadores Aba 3-->
+
+                  <div id="menu3" class="tab-pane fade">
+
+                    <div class="row">
+                      <label for="nomeCandidato" class="col-sm-3 col-centered">Título do Edital</label>
+                      <div class="col-sm-9 col-centered">
+                        <input type="name" class="form-control" id="" placeholder="Título do Edital" disabled="">
+                      </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                      <label for="nomeCandidato" class="col-sm-3 col-centered">Polos</label>
+                      <div class="col-sm-9 col-centered">
+                        <input type="name" class="form-control" id="" placeholder="Polo1; Polo2; Polo3;" disabled="">
+                      </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                      <label for="" class="col-sm-3">Período</label>
+                      <div class="col-sm-3">
+                        <input type="text" class="form-control" id="" placeholder="de" disabled="">
+                      </div>
+                      <div class="col-sm-3">
+                        <input type="text" class="form-control" id="" placeholder="a" disabled="">
+                      </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                      <div class="form-group">
+                        <br>
+                        <label for="comment" class="col-sm-3">Descrição</label>
+                        <div class="col-md-9 col-centered">
+                          <textarea class="form-control" rows="5" id="" placeholder="Descrição do Concurso" disabled=""></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                      <label for="nomeCandidato" class="col-sm-3 col-centered">Avaliadores</label>
+                      <div class="col-sm-9 col-centered">
+                        <input type="name" class="form-control" id="" placeholder="Avaliador1; Avaliador2; Avaliador3;" disabled="">
+                      </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                      <label for="nomeCandidato" class="col-sm-3 col-centered">Cursos</label>
+                      <div class="col-sm-9 col-centered">
+                        <input type="name" class="form-control" id="" placeholder="Curso1; Curso2; Curso3;" disabled="">
+                      </div>
+                    </div>
+
+                    <br><br>
+                    <div class="checkbox">
+                      <label><input type="checkbox" value="">Li e confirmo as informações</label>
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-success">Confirmar</button>
                   </div>
 
-                  <!--  Fim teste -->
 
+                </div>
 
 
 
